@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>সৌদি ফাউন্ডেশন - আবেদন ও ব্যালেন্স</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f0f2f5;margin:0;padding:20px;text-align:center}
+.container{max-width:400px;margin:auto;background:#fff;padding:20px;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,0.1)}
+h2{color:#1877f2}
+input,button{width:90%;padding:10px;margin:10px 0;border:1px solid #ccc;border-radius:5px;font-size:16px}
+button{background:#1877f2;color:#fff;border:none;cursor:pointer}
+button:hover{background:#145db2}
+.result{margin-top:20px;padding:15px;background:#e7f3ff;border-radius:8px;display:none}
+</style>
+</head>
+<body>
+<div class="container">
+<h2>সৌদি ফাউন্ডেশন</h2>
+<p>আপনার আবেদন স্ট্যাটাস ও ব্যালেন্স দেখুন</p>
+<input type="text" id="nid" placeholder="NID / পাসপোর্ট নম্বর দিন">
+<button onclick="checkStatus()">চেক করুন</button>
+<div class="result" id="result"></div>
+</div>
+
+<script>
+function checkStatus(){
+  let nid = document.getElementById("nid").value;
+  let result = document.getElementById("result");
+  if(nid == ""){
+    alert("NID নম্বর দিন");
+    return;
+  }
+  result.style.display = "block";
+  result.innerHTML = "<b>আবেদনকারী:</b> " + nid + "<br><b>স্ট্যাটাস:</b> যাচাই চলছে<br><b>ব্যালেন্স:</b> 2500 SAR";
+}
+</script>
+</body>
+</html>
